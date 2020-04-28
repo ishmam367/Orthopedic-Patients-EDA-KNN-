@@ -1,0 +1,1 @@
+In this project biochemical feature of orthopedic patients has been analyzed with data visualization and by finding correlation,model complexity,accuracy and cross validaion accuracy of KNN algorithm on this data
