@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predict Orthopedic Problems</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="pelvic_incidence" placeholder="pelvic incidence" required="required" />
+        <input type="text" name="pelvic_tilt numeric" placeholder="pelvic tilt " required="required" />
+		<input type="text" name="lumbar_lordosis_angle" placeholder="lumbar_lordosis_angle" required="required" />
+		<input type="text" name="sacral_slope" placeholder="sacral_slope" required="required" />
+		<input type="text" name="pelvic_radius" placeholder="pelvic_radius" required="required" />
+		<input type="text" name="degree_spondylolisthesis" placeholder="degree_spondylolisthesis" required="required" />
+
+
+
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
